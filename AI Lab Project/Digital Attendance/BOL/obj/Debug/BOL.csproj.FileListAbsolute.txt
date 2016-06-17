@@ -1,0 +1,27 @@
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\BOL\obj\Debug\BOL.csprojResolveAssemblyReference.cache
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\BOL\bin\Debug\BOL.dll
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\BOL\bin\Debug\BOL.pdb
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\BOL\bin\Debug\DAL.dll
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\BOL\bin\Debug\Entity.dll
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\BOL\bin\Debug\DAL.pdb
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\BOL\bin\Debug\Entity.pdb
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\BOL\obj\Debug\BOL.dll
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\BOL\obj\Debug\BOL.pdb
+E:\AI Lab Project\Digital Attendance\BOL\bin\Debug\BOL.dll
+E:\AI Lab Project\Digital Attendance\BOL\bin\Debug\BOL.pdb
+E:\AI Lab Project\Digital Attendance\BOL\bin\Debug\DAL.dll
+E:\AI Lab Project\Digital Attendance\BOL\bin\Debug\Entity.dll
+E:\AI Lab Project\Digital Attendance\BOL\bin\Debug\DAL.pdb
+E:\AI Lab Project\Digital Attendance\BOL\bin\Debug\Entity.pdb
+E:\AI Lab Project\Digital Attendance\BOL\obj\Debug\BOL.csprojResolveAssemblyReference.cache
+E:\AI Lab Project\Digital Attendance\BOL\obj\Debug\BOL.dll
+E:\AI Lab Project\Digital Attendance\BOL\obj\Debug\BOL.pdb
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\BOL\bin\Debug\BOL.dll
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\BOL\bin\Debug\BOL.pdb
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\BOL\bin\Debug\DAL.dll
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\BOL\bin\Debug\Entity.dll
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\BOL\bin\Debug\DAL.pdb
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\BOL\bin\Debug\Entity.pdb
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\BOL\obj\Debug\BOL.csprojResolveAssemblyReference.cache
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\BOL\obj\Debug\BOL.dll
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\BOL\obj\Debug\BOL.pdb

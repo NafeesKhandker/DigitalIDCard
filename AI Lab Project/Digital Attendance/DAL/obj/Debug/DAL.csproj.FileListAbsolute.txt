@@ -1,0 +1,14 @@
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\DAL\bin\Debug\DAL.dll
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\DAL\bin\Debug\DAL.pdb
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\DAL\obj\Debug\DAL.dll
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\DAL\obj\Debug\DAL.pdb
+E:\AI Lab Project\Digital Attendance\DAL\bin\Debug\DAL.dll
+E:\AI Lab Project\Digital Attendance\DAL\bin\Debug\DAL.pdb
+E:\AI Lab Project\Digital Attendance\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\AI Lab Project\Digital Attendance\DAL\obj\Debug\DAL.dll
+E:\AI Lab Project\Digital Attendance\DAL\obj\Debug\DAL.pdb
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\DAL\bin\Debug\DAL.dll
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\DAL\bin\Debug\DAL.pdb
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\DAL\obj\Debug\DAL.dll
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\DAL\obj\Debug\DAL.pdb

@@ -1,0 +1,14 @@
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\Entity\bin\Debug\Entity.dll
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\Entity\bin\Debug\Entity.pdb
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\Entity\obj\Debug\Entity.dll
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\Entity\obj\Debug\Entity.pdb
+E:\AI Lab Project\Digital Attendance\Entity\bin\Debug\Entity.dll
+E:\AI Lab Project\Digital Attendance\Entity\bin\Debug\Entity.pdb
+E:\AI Lab Project\Digital Attendance\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
+E:\AI Lab Project\Digital Attendance\Entity\obj\Debug\Entity.dll
+E:\AI Lab Project\Digital Attendance\Entity\obj\Debug\Entity.pdb
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Entity\bin\Debug\Entity.dll
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Entity\bin\Debug\Entity.pdb
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Entity\obj\Debug\Entity.dll
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Entity\obj\Debug\Entity.pdb

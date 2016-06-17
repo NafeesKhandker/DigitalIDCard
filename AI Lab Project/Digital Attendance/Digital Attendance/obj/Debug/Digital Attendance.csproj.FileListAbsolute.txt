@@ -1,0 +1,87 @@
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\Digital Attendance\bin\Debug\Digital Attendance.exe.config
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\Digital Attendance\obj\Debug\Digital Attendance.csprojResolveAssemblyReference.cache
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.Properties.Resources.resources
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\Digital Attendance\obj\Debug\Digital Attendance.csproj.GenerateResource.Cache
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\Digital Attendance\bin\Debug\Digital Attendance.exe
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\Digital Attendance\bin\Debug\Digital Attendance.pdb
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\Digital Attendance\bin\Debug\BOL.dll
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\Digital Attendance\bin\Debug\Entity.dll
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\Digital Attendance\bin\Debug\BOL.pdb
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\Digital Attendance\bin\Debug\Entity.pdb
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\Digital Attendance\obj\Debug\Digital Attendance.exe
+c:\users\hunter\documents\visual studio 2015\Projects\Digital Attendance\Digital Attendance\obj\Debug\Digital Attendance.pdb
+C:\Users\Hunter\documents\visual studio 2015\Projects\Digital Attendance\Digital Attendance\bin\Debug\DAL.dll
+C:\Users\Hunter\documents\visual studio 2015\Projects\Digital Attendance\Digital Attendance\bin\Debug\DAL.pdb
+C:\Users\Hunter\documents\visual studio 2015\Projects\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.Add_Student.resources
+C:\Users\Hunter\documents\visual studio 2015\Projects\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.AdminPage.resources
+C:\Users\Hunter\documents\visual studio 2015\Projects\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.AdminProfile.resources
+C:\Users\Hunter\documents\visual studio 2015\Projects\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.AssignCourse.resources
+C:\Users\Hunter\documents\visual studio 2015\Projects\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.Student_List.resources
+C:\Users\Hunter\documents\visual studio 2015\Projects\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.Login.resources
+C:\Users\Hunter\documents\visual studio 2015\Projects\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.Attendance.resources
+C:\Users\Hunter\Desktop\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\Digital Attendance.exe.config
+C:\Users\Hunter\Desktop\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital Attendance.exe
+C:\Users\Hunter\Desktop\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital Attendance.pdb
+C:\Users\Hunter\Desktop\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\Digital Attendance.exe
+C:\Users\Hunter\Desktop\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\Digital Attendance.pdb
+C:\Users\Hunter\Desktop\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\BOL.dll
+C:\Users\Hunter\Desktop\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\Entity.dll
+C:\Users\Hunter\Desktop\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\DAL.dll
+C:\Users\Hunter\Desktop\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\BOL.pdb
+C:\Users\Hunter\Desktop\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\Entity.pdb
+C:\Users\Hunter\Desktop\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\DAL.pdb
+C:\Users\Hunter\Desktop\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital Attendance.csprojResolveAssemblyReference.cache
+C:\Users\Hunter\Desktop\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.Add_Student.resources
+C:\Users\Hunter\Desktop\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.AdminPage.resources
+C:\Users\Hunter\Desktop\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.AdminProfile.resources
+C:\Users\Hunter\Desktop\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.AssignCourse.resources
+C:\Users\Hunter\Desktop\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.Attendance.resources
+C:\Users\Hunter\Desktop\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.Login.resources
+C:\Users\Hunter\Desktop\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.Properties.Resources.resources
+C:\Users\Hunter\Desktop\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.Student_List.resources
+C:\Users\Hunter\Desktop\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital Attendance.csproj.GenerateResource.Cache
+E:\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\Digital Attendance.exe.config
+E:\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital Attendance.exe
+E:\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital Attendance.pdb
+E:\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\Digital Attendance.exe
+E:\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\Digital Attendance.pdb
+E:\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\BOL.dll
+E:\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\Entity.dll
+E:\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\DAL.dll
+E:\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\BOL.pdb
+E:\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\Entity.pdb
+E:\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\DAL.pdb
+E:\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital Attendance.csprojResolveAssemblyReference.cache
+E:\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.Add_Student.resources
+E:\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.AdminPage.resources
+E:\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.AdminProfile.resources
+E:\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.AssignCourse.resources
+E:\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.Attendance.resources
+E:\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.Login.resources
+E:\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.Properties.Resources.resources
+E:\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.Student_List.resources
+E:\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital Attendance.csproj.GenerateResource.Cache
+E:\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.Add_Course.resources
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\Digital Attendance.exe.config
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital Attendance.exe
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital Attendance.pdb
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\Digital Attendance.exe
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\Digital Attendance.pdb
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\BOL.dll
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\Entity.dll
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\DAL.dll
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\BOL.pdb
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\Entity.pdb
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Digital Attendance\bin\Debug\DAL.pdb
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital Attendance.csprojResolveAssemblyReference.cache
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.Add_Course.resources
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.Add_Student.resources
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.AdminPage.resources
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.AdminProfile.resources
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.AssignCourse.resources
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.Attendance.resources
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.Login.resources
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.Properties.Resources.resources
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.Student_List.resources
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital Attendance.csproj.GenerateResource.Cache
+F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\Digital Attendance\obj\Debug\Digital_Attendance.AppGUI.resources
