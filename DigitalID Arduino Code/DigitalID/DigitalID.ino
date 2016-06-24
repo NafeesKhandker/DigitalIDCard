@@ -176,6 +176,7 @@ void RoutineKeyboard(){
   if (keyboardValue >938)
   {
     keypressed = '#';
+    password[keypressCount] = keypressed;
     lcd.clear();
     lcd.print("Please Wait...");
     digitalWrite(INDICATOR_RED, LOW);

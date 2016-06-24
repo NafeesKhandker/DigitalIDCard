@@ -77,15 +77,15 @@ namespace Digital_Attendance
                 labelStatus.Text = "KUSmartLog is running...";
                 pictureBoxStatus.Image = Properties.Resources.image_997222;
                 MessageBox.Show("KUSmartLog attendance counting started!");
-                
+                serialCom.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
+
             }
             catch (Exception)
             {
 
-                MessageBox.Show("The port name you have entered is not valid! \nTroubleshooting: \n1. Try with different port name such as 'COM5', 'COM6', etc. \n2. Check if the letters are in uppercase. \n3. The hardware is connected to the serial port of the computer.", "Access Denied!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("The port name you have entered is not valid! \nTroubleshooting: \n1. Try with different port name such as 'COM5', 'COM6', etc. \n2. Check if the letters are in uppercase. \n3. Check if the hardware is connected to the serial port of the computer.", "Access Denied!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            serialCom.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
         }
 
         public void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
@@ -94,6 +94,18 @@ namespace Digital_Attendance
             string indata = sp.ReadLine();
 
             indata = indata.Substring(0, indata.Length - 1);
+
+            //check if password
+            if (String.Equals(indata.ElementAt(indata.Length - 1), '#'))
+            {
+                MessageBox.Show("yes password!");
+            }
+
+            else {
+                MessageBox.Show("No Password");
+            }
+
+
 
             this.Invoke((MethodInvoker)delegate
             {

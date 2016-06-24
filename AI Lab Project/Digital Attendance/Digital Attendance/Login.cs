@@ -72,12 +72,12 @@ namespace Digital_Attendance
         {
             if (Password == "")
             {
-                valmsgUsername.Visible = true;
+                valmsgPassword.Visible = true;
                 return Password;
             }
             else
             {
-                valmsgUsername.Visible = false;
+                valmsgPassword.Visible = false;
                 return Password;
             }
         }

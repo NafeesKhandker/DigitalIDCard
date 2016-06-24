@@ -22,7 +22,6 @@ namespace Digital_Attendance
         {
             InitializeComponent();
             hideValidationMessages();
-            rbMale.Checked = true;
         }
 
         private void btnAddStudent_Click(object sender, EventArgs e)
@@ -31,14 +30,9 @@ namespace Digital_Attendance
             si.student_RFID = validateRFID(tbRfid.Text);
             si.first_name = validateFName(tbFirstName.Text);
             si.last_name = validateLName(tbLastName.Text);
-            if (rbMale.Checked)
-                si.gender_id = 1;
-            else
-                si.gender_id = 2;
 
             si.contact_mobile = tbContact.Text;
             si.email_address = tbEmail.Text;
-            si.is_active = true;
 
             if(valmsgSID.Visible || valmsgRFID.Visible || valmsgFirstName.Visible || valmsgLastName.Visible)
             {
@@ -82,7 +76,7 @@ namespace Digital_Attendance
             string result = "";
             if (text == "")
             {
-                valmsgSID.Text = "This Field Required";
+                valmsgSID.Text = "This Field is Required";
                 valmsgSID.Visible = true;
                 return result;
             }
@@ -98,7 +92,7 @@ namespace Digital_Attendance
             string result = "";
             if (text == "")
             {
-                valmsgRFID.Text = "This Field Required";
+                valmsgRFID.Text = "This Field is Required";
                 valmsgRFID.Visible = true;
                 return result;
             }
@@ -114,7 +108,7 @@ namespace Digital_Attendance
             string result = "";
             if (text == "")
             {
-                valmsgFirstName.Text = "This Field Required";
+                valmsgFirstName.Text = "This Field is Required";
                 valmsgFirstName.Visible = true;
                 return result;
             }
@@ -130,7 +124,7 @@ namespace Digital_Attendance
             string result = "";
             if (text == "")
             {
-                valmsgLastName.Text = "This Field Required";
+                valmsgLastName.Text = "This Field is Required";
                 valmsgLastName.Visible = true;
                 return result;
             }

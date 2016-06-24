@@ -7,14 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using BOL;
 
 namespace Digital_Attendance
 {
     public partial class AssignCourse : Form
     {
+        Operations oper = new Operations();
         public AssignCourse()
         {
             InitializeComponent();
+          
+            SqlDataReader DR = oper.GetCourses();
+            while (DR.Read())
+            {
+                comboBoxCourseName.Items.Add(DR[0]);
+            }
+        }
+
+        private void AssignCourse_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

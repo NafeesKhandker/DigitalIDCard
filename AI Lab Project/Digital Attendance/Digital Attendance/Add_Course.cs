@@ -21,8 +21,6 @@ namespace Digital_Attendance
         public Add_Course()
         {
             InitializeComponent();
-            combocourseType.Items.Add("Theory");
-            combocourseType.Items.Add("Lab");
             hideValidationMessages();
         }
 
@@ -30,9 +28,6 @@ namespace Digital_Attendance
         {
             c.course_name = validateC_NAME(tbCourseName.Text);
             c.course_code = validateC_CODE(tbCourseCode.Text);
-            c.course_type_id = validateC_TYPE(combocourseType.Text);
-            c.is_optional = IsOption();
-            c.is_active = true;
 
             if (valmsgC_Name.Visible || valmsgC_Code.Visible)
             {
@@ -82,42 +77,10 @@ namespace Digital_Attendance
             }
         }
 
-        private int validateC_TYPE(string text)
-        {
-            int code = 0;
-            if (text == "")
-            {
-                valmsgC_Type.Text = "This Field Required";
-                valmsgC_Type.Visible = true;
-                return code;
-            }
-            else
-            {
-                valmsgC_Type.Visible = false;
-                if (text == "Lab")
-                    return code = 2;
-                else
-                    return code = 1;
-            }
-        }
-
-        private bool IsOption()
-        {
-            if (isoptional.CheckState.ToString() == "Unchecked")
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
         private void hideValidationMessages()
         {
             valmsgC_Name.Visible = false;
             valmsgC_Code.Visible = false;
-            valmsgC_Type.Visible = false;
         }
 
         private void combocourseType_SelectedIndexChanged(object sender, EventArgs e)

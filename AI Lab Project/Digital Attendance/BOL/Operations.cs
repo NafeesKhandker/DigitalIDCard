@@ -24,7 +24,7 @@ namespace BOL
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO StudentInfo VALUES('"+si.student_id+"','"+si.student_RFID+ "','"+si.first_name+ "','"+si.last_name+ "','"+si.gender_id+ "','"+si.contact_mobile+ "','"+si.email_address+ "','"+si.is_active+"')";
+            cmd.CommandText = "INSERT INTO StudentInfo VALUES('"+si.student_id+"','"+si.student_RFID+ "','"+si.first_name+ "','"+si.last_name+ "','"+si.contact_mobile+ "','"+si.email_address+"')";
             return db.ExeNonQuery(cmd);
         }
 
@@ -32,7 +32,7 @@ namespace BOL
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO Courses VALUES('" + c.course_name + "','" + c.course_code + "','" + c.course_type_id + "','" + c.is_optional + "','" + c.is_active + "')";
+            cmd.CommandText = "INSERT INTO Courses VALUES('" + c.course_name + "','" + c.course_code +"')";
             return db.ExeNonQuery(cmd);
         }
 
@@ -40,7 +40,7 @@ namespace BOL
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT student_id, student_RFID, (first_name + ' ' + last_name) AS name, g.gender, contact_mobile, email_address, is_active FROM StudentInfo INNER JOIN Gender AS g ON g.gender_id = StudentInfo.gender_id  WHERE is_active = 1";
+            cmd.CommandText = "SELECT student_id, student_RFID, (first_name + ' ' + last_name) AS name, contact_mobile, email_address FROM StudentInfo";
             return db.ExeReader(cmd);
         }
 
@@ -58,6 +58,15 @@ namespace BOL
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "SELECT * FROM UserProfile AS up WHERE up.user_name = '"+loggedUsername+"'";
             return db.ExeReader(cmd);
+        }
+
+        public SqlDataReader GetCourses()
+        {
+            string Sql = "SELECT course_code FROM Courses";
+            SqlConnection conn = db.connection;
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(Sql, conn);
+            return cmd.ExecuteReader();
         }
     }
 }

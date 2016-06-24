@@ -34,16 +34,22 @@
             // 
             // studentsData
             // 
+            this.studentsData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.studentsData.BackgroundColor = System.Drawing.Color.White;
+            this.studentsData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.studentsData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.studentsData.Location = new System.Drawing.Point(12, 12);
+            this.studentsData.Location = new System.Drawing.Point(33, 33);
             this.studentsData.Name = "studentsData";
-            this.studentsData.Size = new System.Drawing.Size(701, 338);
+            this.studentsData.ReadOnly = true;
+            this.studentsData.Size = new System.Drawing.Size(660, 300);
             this.studentsData.TabIndex = 0;
             // 
             // Student_List
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(725, 362);
             this.Controls.Add(this.studentsData);
             this.Name = "Student_List";

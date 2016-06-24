@@ -28,20 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.comboBoxCourseName = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
+            // 
+            // comboBoxCourseName
+            // 
+            this.comboBoxCourseName.FormattingEnabled = true;
+            this.comboBoxCourseName.Location = new System.Drawing.Point(12, 43);
+            this.comboBoxCourseName.Name = "comboBoxCourseName";
+            this.comboBoxCourseName.Size = new System.Drawing.Size(289, 21);
+            this.comboBoxCourseName.TabIndex = 0;
             // 
             // AssignCourse
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 289);
+            this.ClientSize = new System.Drawing.Size(503, 261);
+            this.Controls.Add(this.comboBoxCourseName);
             this.Name = "AssignCourse";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AssignCourse";
+            this.Load += new System.EventHandler(this.AssignCourse_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.ComboBox comboBoxCourses;
+        private System.Windows.Forms.ComboBox comboBoxStudentID;
+        private System.Windows.Forms.ComboBox comboBoxCourseName;
     }
 }

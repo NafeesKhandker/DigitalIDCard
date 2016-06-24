@@ -30,8 +30,6 @@
         {
             this.btnAddStudent = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbFemale = new System.Windows.Forms.RadioButton();
-            this.rbMale = new System.Windows.Forms.RadioButton();
             this.gender = new System.Windows.Forms.Label();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,20 +52,20 @@
             // 
             // btnAddStudent
             // 
+            this.btnAddStudent.BackColor = System.Drawing.Color.Teal;
             this.btnAddStudent.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAddStudent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddStudent.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddStudent.Location = new System.Drawing.Point(0, 478);
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.Size = new System.Drawing.Size(468, 35);
             this.btnAddStudent.TabIndex = 9;
             this.btnAddStudent.Text = "Done";
-            this.btnAddStudent.UseVisualStyleBackColor = true;
+            this.btnAddStudent.UseVisualStyleBackColor = false;
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rbFemale);
-            this.groupBox1.Controls.Add(this.rbMale);
             this.groupBox1.Controls.Add(this.gender);
             this.groupBox1.Controls.Add(this.tbEmail);
             this.groupBox1.Controls.Add(this.label1);
@@ -85,52 +83,29 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.tbFirstName);
             this.groupBox1.Controls.Add(this.firstName);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 9);
+            this.groupBox1.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(26, 25);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(444, 460);
+            this.groupBox1.Size = new System.Drawing.Size(415, 427);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Student Registration";
             // 
-            // rbFemale
-            // 
-            this.rbFemale.AutoSize = true;
-            this.rbFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbFemale.Location = new System.Drawing.Point(320, 249);
-            this.rbFemale.Name = "rbFemale";
-            this.rbFemale.Size = new System.Drawing.Size(67, 19);
-            this.rbFemale.TabIndex = 6;
-            this.rbFemale.TabStop = true;
-            this.rbFemale.Text = "Female";
-            this.rbFemale.UseVisualStyleBackColor = true;
-            // 
-            // rbMale
-            // 
-            this.rbMale.AutoSize = true;
-            this.rbMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMale.Location = new System.Drawing.Point(204, 249);
-            this.rbMale.Name = "rbMale";
-            this.rbMale.Size = new System.Drawing.Size(53, 19);
-            this.rbMale.TabIndex = 5;
-            this.rbMale.TabStop = true;
-            this.rbMale.Text = "Male";
-            this.rbMale.UseVisualStyleBackColor = true;
-            // 
             // gender
             // 
             this.gender.AutoSize = true;
-            this.gender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gender.Location = new System.Drawing.Point(48, 251);
+            this.gender.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gender.ForeColor = System.Drawing.Color.Gray;
+            this.gender.Location = new System.Drawing.Point(48, 256);
             this.gender.Name = "gender";
-            this.gender.Size = new System.Drawing.Size(56, 17);
+            this.gender.Size = new System.Drawing.Size(0, 15);
             this.gender.TabIndex = 0;
-            this.gender.Text = "Gender";
             // 
             // tbEmail
             // 
             this.tbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEmail.Location = new System.Drawing.Point(204, 299);
+            this.tbEmail.Location = new System.Drawing.Point(190, 269);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(183, 23);
             this.tbEmail.TabIndex = 7;
@@ -138,17 +113,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(48, 299);
+            this.label1.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.Location = new System.Drawing.Point(48, 269);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 17);
+            this.label1.Size = new System.Drawing.Size(38, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Email";
             // 
             // tbContact
             // 
             this.tbContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbContact.Location = new System.Drawing.Point(204, 360);
+            this.tbContact.Location = new System.Drawing.Point(190, 330);
             this.tbContact.Name = "tbContact";
             this.tbContact.Size = new System.Drawing.Size(183, 23);
             this.tbContact.TabIndex = 8;
@@ -156,17 +132,18 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(48, 363);
+            this.label3.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Gray;
+            this.label3.Location = new System.Drawing.Point(48, 333);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 17);
+            this.label3.Size = new System.Drawing.Size(75, 15);
             this.label3.TabIndex = 0;
             this.label3.Text = "Contact No";
             // 
             // tbLastName
             // 
             this.tbLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLastName.Location = new System.Drawing.Point(204, 200);
+            this.tbLastName.Location = new System.Drawing.Point(190, 205);
             this.tbLastName.Name = "tbLastName";
             this.tbLastName.Size = new System.Drawing.Size(183, 23);
             this.tbLastName.TabIndex = 4;
@@ -174,17 +151,18 @@
             // lastName
             // 
             this.lastName.AutoSize = true;
-            this.lastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastName.Location = new System.Drawing.Point(48, 203);
+            this.lastName.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastName.ForeColor = System.Drawing.Color.Gray;
+            this.lastName.Location = new System.Drawing.Point(48, 208);
             this.lastName.Name = "lastName";
-            this.lastName.Size = new System.Drawing.Size(76, 17);
+            this.lastName.Size = new System.Drawing.Size(69, 15);
             this.lastName.TabIndex = 0;
             this.lastName.Text = "Last Name";
             // 
             // tbStudentId
             // 
             this.tbStudentId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbStudentId.Location = new System.Drawing.Point(204, 30);
+            this.tbStudentId.Location = new System.Drawing.Point(190, 35);
             this.tbStudentId.MaxLength = 6;
             this.tbStudentId.Name = "tbStudentId";
             this.tbStudentId.Size = new System.Drawing.Size(183, 23);
@@ -197,7 +175,7 @@
             this.valmsgLastName.AutoSize = true;
             this.valmsgLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valmsgLastName.ForeColor = System.Drawing.Color.Red;
-            this.valmsgLastName.Location = new System.Drawing.Point(244, 226);
+            this.valmsgLastName.Location = new System.Drawing.Point(230, 231);
             this.valmsgLastName.Name = "valmsgLastName";
             this.valmsgLastName.Size = new System.Drawing.Size(98, 13);
             this.valmsgLastName.TabIndex = 0;
@@ -209,7 +187,7 @@
             this.valmsgFirstName.AutoSize = true;
             this.valmsgFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valmsgFirstName.ForeColor = System.Drawing.Color.Red;
-            this.valmsgFirstName.Location = new System.Drawing.Point(244, 168);
+            this.valmsgFirstName.Location = new System.Drawing.Point(230, 173);
             this.valmsgFirstName.Name = "valmsgFirstName";
             this.valmsgFirstName.Size = new System.Drawing.Size(98, 13);
             this.valmsgFirstName.TabIndex = 0;
@@ -221,7 +199,7 @@
             this.valmsgRFID.AutoSize = true;
             this.valmsgRFID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valmsgRFID.ForeColor = System.Drawing.Color.Red;
-            this.valmsgRFID.Location = new System.Drawing.Point(244, 116);
+            this.valmsgRFID.Location = new System.Drawing.Point(230, 121);
             this.valmsgRFID.Name = "valmsgRFID";
             this.valmsgRFID.Size = new System.Drawing.Size(98, 13);
             this.valmsgRFID.TabIndex = 0;
@@ -233,7 +211,7 @@
             this.valmsgSID.AutoSize = true;
             this.valmsgSID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valmsgSID.ForeColor = System.Drawing.Color.Red;
-            this.valmsgSID.Location = new System.Drawing.Point(244, 56);
+            this.valmsgSID.Location = new System.Drawing.Point(230, 61);
             this.valmsgSID.Name = "valmsgSID";
             this.valmsgSID.Size = new System.Drawing.Size(98, 13);
             this.valmsgSID.TabIndex = 0;
@@ -242,17 +220,18 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(48, 33);
+            this.label4.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Gray;
+            this.label4.Location = new System.Drawing.Point(48, 38);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 17);
+            this.label4.Size = new System.Drawing.Size(69, 15);
             this.label4.TabIndex = 0;
             this.label4.Text = "Student ID";
             // 
             // tbRfid
             // 
             this.tbRfid.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbRfid.Location = new System.Drawing.Point(204, 90);
+            this.tbRfid.Location = new System.Drawing.Point(190, 95);
             this.tbRfid.Name = "tbRfid";
             this.tbRfid.Size = new System.Drawing.Size(183, 23);
             this.tbRfid.TabIndex = 2;
@@ -261,17 +240,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(48, 93);
+            this.label2.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(48, 98);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 17);
+            this.label2.Size = new System.Drawing.Size(34, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "RFID";
             // 
             // tbFirstName
             // 
             this.tbFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFirstName.Location = new System.Drawing.Point(204, 142);
+            this.tbFirstName.Location = new System.Drawing.Point(190, 147);
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(183, 23);
             this.tbFirstName.TabIndex = 3;
@@ -279,10 +259,11 @@
             // firstName
             // 
             this.firstName.AutoSize = true;
-            this.firstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstName.Location = new System.Drawing.Point(48, 145);
+            this.firstName.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstName.ForeColor = System.Drawing.Color.Gray;
+            this.firstName.Location = new System.Drawing.Point(48, 150);
             this.firstName.Name = "firstName";
-            this.firstName.Size = new System.Drawing.Size(76, 17);
+            this.firstName.Size = new System.Drawing.Size(71, 15);
             this.firstName.TabIndex = 0;
             this.firstName.Text = "First Name";
             // 
@@ -290,6 +271,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(468, 513);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAddStudent);
@@ -314,13 +296,10 @@
         private System.Windows.Forms.TextBox tbContact;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbEmail;
-        private System.Windows.Forms.TextBox tbGender;
         private System.Windows.Forms.TextBox tbStudentId;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbRfid;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton rbFemale;
-        private System.Windows.Forms.RadioButton rbMale;
         private System.Windows.Forms.Label gender;
         private System.Windows.Forms.Label valmsgLastName;
         private System.Windows.Forms.Label valmsgFirstName;
