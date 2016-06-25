@@ -87,5 +87,16 @@ namespace BOL
             conn.Close();
             return false;
         }
+
+        public String GetCourseNameByPW(string pass)
+        {
+            string Sql = "SELECT course_name FROM Courses WHERE password = '" + pass + "'";
+            SqlConnection conn = db.connection;
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(Sql, conn);
+            string value = (string)cmd.ExecuteScalar();
+            conn.Close();
+            return value;
+        }
     }
 }

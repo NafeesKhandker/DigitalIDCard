@@ -17,7 +17,6 @@ namespace Digital_Attendance
     {
         SerialPort serialCom = new SerialPort();
         Operations op = new Operations();
-        bool isKeypressed = false;
         bool isHashPressed = false;
         string password = "";
         System.Timers.Timer myTimer;
@@ -74,7 +73,7 @@ namespace Digital_Attendance
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
-            serialCom.BaudRate = 115200;
+            serialCom.BaudRate = 9600;
             serialCom.Parity = Parity.None;
             serialCom.DataBits = 8;
             serialCom.StopBits = StopBits.One;
@@ -106,27 +105,31 @@ namespace Digital_Attendance
             if (indata.Length == 2)
             {
                 //Single digit pressed
-                if (isKeypressed == false)
-                {
-                    InitTimer();
-                    isKeypressed = true;
-                }
 
                 if (indata.Contains('#'))
                 {
-                    myTimer.Stop();
-                    MessageBox.Show(password);
-                    isKeypressed = false;
-                    password = "";
-                    isHashPressed = true; 
-                }
+                    if (op.IsValidPassword(password))
+                    {
+                        //This password is valid
+                        sp.WriteLine(op.GetCourseNameByPW(password));
+                        
+                    }
+                    else
+                    {
+                        //this password is not valid
+                        sp.WriteLine("invalid password!");
 
-                password += indata.Substring(0, indata.Length - 1);
+                    } 
+                        password = "";             
+                }
+                else
+                    password += indata.Substring(0, indata.Length - 1);
             }
 
             else
             {
                 //TagID digit
+
             }
            // indata = indata.Substring(0, indata.Length - 1);
             
@@ -157,27 +160,27 @@ namespace Digital_Attendance
             //}
 
 
-            this.Invoke((MethodInvoker)delegate
-            {
-                textBoxEntry.AppendText("Data Received.\n");
-                textBoxEntry.AppendText(indata + "\n");
-            });
+            //this.Invoke((MethodInvoker)delegate
+            //{
+            //    textBoxEntry.AppendText("Data Received.\n");
+            //    textBoxEntry.AppendText(indata + "\n");
+            //});
 
 
-            if (String.Equals(indata, "160975869190"))
-            {
-                this.Invoke(new MethodInvoker(delegate ()
-                {
-                    textBoxEntry.AppendText("Matched! \n");
-                }));
-                sp.WriteLine("Matched");
+            //if (String.Equals(indata, "160975869190"))
+            //{
+            //    this.Invoke(new MethodInvoker(delegate ()
+            //    {
+            //        textBoxEntry.AppendText("Matched! \n");
+            //    }));
+            //    sp.WriteLine("Matched");
 
 
-            }
-            else
-            {
-                sp.WriteLine("");
-            }
+            //}
+            //else
+            //{
+            //    sp.WriteLine("");
+            //}
 
         }
 
