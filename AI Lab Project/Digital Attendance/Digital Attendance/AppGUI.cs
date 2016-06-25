@@ -8,17 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
+using System.Timers;
+using BOL;
 
 namespace Digital_Attendance
 {
     public partial class AppGUI : Form
     {
         SerialPort serialCom = new SerialPort();
+        Operations op = new Operations();
+        bool isKeypressed = false;
+        bool isHashPressed = false;
+        string password = "";
+        System.Timers.Timer myTimer;
+
         public AppGUI()
         {
             InitializeComponent();
             pictureBoxStatus.Image = Properties.Resources.StopStatus;
             labelStatus.Text = "KUSmartLog is not running...";
+            textBoxPortName.Focus();
         }
 
         private void labelAppName_Click(object sender, EventArgs e)
@@ -74,6 +83,7 @@ namespace Digital_Attendance
             {
                 serialCom.PortName = textBoxPortName.Text;
                 serialCom.Open();
+                serialCom.WriteLine("");
                 labelStatus.Text = "KUSmartLog is running...";
                 pictureBoxStatus.Image = Properties.Resources.image_997222;
                 MessageBox.Show("KUSmartLog attendance counting started!");
@@ -92,19 +102,59 @@ namespace Digital_Attendance
         {
             SerialPort sp = (SerialPort)sender;
             string indata = sp.ReadLine();
-
-            indata = indata.Substring(0, indata.Length - 1);
-
-            //check if password
-            if (String.Equals(indata.ElementAt(indata.Length - 1), '#'))
+    
+            if (indata.Length == 2)
             {
-                MessageBox.Show("yes password!");
+                //Single digit pressed
+                if (isKeypressed == false)
+                {
+                    InitTimer();
+                    isKeypressed = true;
+                }
+
+                if (indata.Contains('#'))
+                {
+                    myTimer.Stop();
+                    MessageBox.Show(password);
+                    isKeypressed = false;
+                    password = "";
+                    isHashPressed = true; 
+                }
+
+                password += indata.Substring(0, indata.Length - 1);
             }
 
-            else {
-                MessageBox.Show("No Password");
+            else
+            {
+                //TagID digit
             }
+           // indata = indata.Substring(0, indata.Length - 1);
+            
+            //check if password
+            //if (indata.Contains('#'))
+            //{
+            //    String password = indata.Substring(0, indata.Length - 1);
 
+            //    if (op.IsValidPassword(password))
+            //    {
+            //        //This password is valid
+            //        MessageBox.Show("Found");
+            //    }
+
+            //    else
+            //    {
+            //        //This password is not valid
+            //        sp.WriteLine("Invalid Password!");
+
+            //    }
+                     
+            //}
+
+            //else
+            //{
+            //    MessageBox.Show("Not a Password");
+                
+            //}
 
 
             this.Invoke((MethodInvoker)delegate
@@ -144,6 +194,34 @@ namespace Digital_Attendance
                     Application.ExitThread();
                     break;
             }
+        }
+
+        public void InitTimer()
+        {
+            myTimer = new System.Timers.Timer();
+            // Tell the timer what to do when it elapses
+            myTimer.Elapsed += new ElapsedEventHandler(myEvent);
+            // Set it to go off every five seconds
+            myTimer.Interval = 10000;
+            // And start it        
+            myTimer.Enabled = true;
+        }
+
+        private void myEvent(object source, ElapsedEventArgs e)
+        {
+            if (isHashPressed == false)
+            {
+                System.Timers.Timer mTimer = (System.Timers.Timer)source;
+                mTimer.Close();
+                MessageBox.Show("Timedout");
+                password = "";
+                serialCom.WriteLine("Session Timedout!");
+            }
+        }
+
+        private void panelHeader_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

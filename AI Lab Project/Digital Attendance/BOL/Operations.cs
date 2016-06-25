@@ -68,5 +68,24 @@ namespace BOL
             SqlCommand cmd = new SqlCommand(Sql, conn);
             return cmd.ExecuteReader();
         }
+
+        public bool IsValidPassword(String pass)
+        {
+            string Sql = "SELECT COUNT(*) FROM Courses WHERE password = '"+pass+"'";
+            SqlConnection conn = db.connection;
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(Sql, conn);
+            if (cmd.ExecuteScalar() != null)
+            {
+                int Status = (int)cmd.ExecuteScalar();
+                if (Status > 0)
+                {
+                    conn.Close();
+                    return true;
+                }    
+            }
+            conn.Close();
+            return false;
+        }
     }
 }

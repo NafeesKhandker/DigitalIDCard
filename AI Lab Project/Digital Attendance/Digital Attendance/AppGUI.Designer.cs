@@ -53,7 +53,7 @@
             this.buttonLogin.Location = new System.Drawing.Point(610, 18);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(63, 25);
-            this.buttonLogin.TabIndex = 0;
+            this.buttonLogin.TabIndex = 1;
             this.buttonLogin.TabStop = false;
             this.buttonLogin.Text = "Log in";
             this.buttonLogin.UseVisualStyleBackColor = false;
@@ -68,7 +68,7 @@
             this.buttonExit.Location = new System.Drawing.Point(680, 18);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(63, 25);
-            this.buttonExit.TabIndex = 1;
+            this.buttonExit.TabIndex = 2;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
@@ -83,7 +83,7 @@
             this.textBoxPortName.Multiline = true;
             this.textBoxPortName.Name = "textBoxPortName";
             this.textBoxPortName.Size = new System.Drawing.Size(125, 25);
-            this.textBoxPortName.TabIndex = 4;
+            this.textBoxPortName.TabIndex = 3;
             // 
             // labelPortName
             // 
@@ -117,6 +117,7 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(758, 92);
             this.panelHeader.TabIndex = 7;
+            this.panelHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHeader_Paint);
             // 
             // labelAppName
             // 
@@ -157,7 +158,7 @@
             this.buttonStart.Location = new System.Drawing.Point(626, 181);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(125, 125);
-            this.buttonStart.TabIndex = 2;
+            this.buttonStart.TabIndex = 4;
             this.buttonStart.UseVisualStyleBackColor = false;
             this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
@@ -171,7 +172,7 @@
             this.buttonStop.Location = new System.Drawing.Point(626, 310);
             this.buttonStop.Name = "buttonStop";
             this.buttonStop.Size = new System.Drawing.Size(125, 125);
-            this.buttonStop.TabIndex = 3;
+            this.buttonStop.TabIndex = 5;
             this.buttonStop.UseVisualStyleBackColor = false;
             this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
             // 
