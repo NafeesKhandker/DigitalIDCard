@@ -25,7 +25,6 @@ namespace Digital_Attendance
         {
             DataTable dt = new DataTable();
             dt = op.ViewStudents(sf);
-
             studentsData.DataSource = dt;
         }
     }

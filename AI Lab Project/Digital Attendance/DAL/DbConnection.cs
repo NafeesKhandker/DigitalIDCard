@@ -20,6 +20,16 @@ namespace DAL
             return connection;
         }
 
+        public SqlConnection closeConnection()
+        {
+            if (connection.State == ConnectionState.Open)
+            {
+                connection.Close();
+            }
+            return connection;
+        }
+
+
         public int ExeNonQuery(SqlCommand cmd)
         {
             try

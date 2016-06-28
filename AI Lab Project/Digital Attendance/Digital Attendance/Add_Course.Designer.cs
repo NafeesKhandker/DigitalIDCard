@@ -97,9 +97,9 @@
             this.valmsgC_Code.ForeColor = System.Drawing.Color.Red;
             this.valmsgC_Code.Location = new System.Drawing.Point(244, 116);
             this.valmsgC_Code.Name = "valmsgC_Code";
-            this.valmsgC_Code.Size = new System.Drawing.Size(98, 13);
+            this.valmsgC_Code.Size = new System.Drawing.Size(108, 13);
             this.valmsgC_Code.TabIndex = 0;
-            this.valmsgC_Code.Text = "This Field Required";
+            this.valmsgC_Code.Text = "This Field is Required";
             this.valmsgC_Code.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // valmsgC_Name
@@ -109,9 +109,9 @@
             this.valmsgC_Name.ForeColor = System.Drawing.Color.Red;
             this.valmsgC_Name.Location = new System.Drawing.Point(244, 56);
             this.valmsgC_Name.Name = "valmsgC_Name";
-            this.valmsgC_Name.Size = new System.Drawing.Size(98, 13);
+            this.valmsgC_Name.Size = new System.Drawing.Size(108, 13);
             this.valmsgC_Name.TabIndex = 0;
-            this.valmsgC_Name.Text = "This Field Required";
+            this.valmsgC_Name.Text = "This Field is Required";
             // 
             // course_name
             // 

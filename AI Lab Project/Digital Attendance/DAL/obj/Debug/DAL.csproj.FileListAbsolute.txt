@@ -12,3 +12,8 @@ F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\DAL\bin\Debug\DAL.pd
 F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\DAL\obj\Debug\DAL.dll
 F:\Studies\AI Lab Project\AI Lab Project\Digital Attendance\DAL\obj\Debug\DAL.pdb
+F:\Studies\AI_Lab_Project\AI Lab Project\Digital Attendance\DAL\bin\Debug\DAL.dll
+F:\Studies\AI_Lab_Project\AI Lab Project\Digital Attendance\DAL\bin\Debug\DAL.pdb
+F:\Studies\AI_Lab_Project\AI Lab Project\Digital Attendance\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+F:\Studies\AI_Lab_Project\AI Lab Project\Digital Attendance\DAL\obj\Debug\DAL.dll
+F:\Studies\AI_Lab_Project\AI Lab Project\Digital Attendance\DAL\obj\Debug\DAL.pdb

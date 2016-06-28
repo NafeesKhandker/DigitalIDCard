@@ -50,7 +50,7 @@ namespace Digital_Attendance
             string result = "";
             if (text == "")
             {
-                valmsgC_Name.Text = "This Field Required";
+                valmsgC_Name.Text = "This Field is Required";
                 valmsgC_Name.Visible = true;
                 return result;
             }
@@ -66,7 +66,7 @@ namespace Digital_Attendance
             int code = 0;
             if (text == "")
             {
-                valmsgC_Code.Text = "This Field Required";
+                valmsgC_Code.Text = "This Field is Required";
                 valmsgC_Code.Visible = true;
                 return code;
             }

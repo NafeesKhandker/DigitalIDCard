@@ -54,7 +54,7 @@
             this.Controls.Add(this.studentsData);
             this.Name = "Student_List";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Student_List";
+            this.Text = "Student List";
             this.Load += new System.EventHandler(this.Student_List_Load);
             ((System.ComponentModel.ISupportInitialize)(this.studentsData)).EndInit();
             this.ResumeLayout(false);

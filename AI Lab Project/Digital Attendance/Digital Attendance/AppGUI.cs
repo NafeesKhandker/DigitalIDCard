@@ -19,7 +19,9 @@ namespace Digital_Attendance
         Operations op = new Operations();
         bool isHashPressed = false;
         string password = "";
+        string runningCourse = "";
         System.Timers.Timer myTimer;
+
 
         public AppGUI()
         {
@@ -111,13 +113,43 @@ namespace Digital_Attendance
                     if (op.IsValidPassword(password))
                     {
                         //This password is valid
-                        sp.WriteLine(op.GetCourseNameByPW(password));
+                        string courseCode = op.GetCourseCodeByPW(password);
+                        if (runningCourse.Equals(""))
+                        {
+                            sp.WriteLine(op.GetCourseNameByPW(password) + " --> Started!");
+                            runningCourse = courseCode;
+                        }
+                        else
+                        {
+                            if (runningCourse.Equals(courseCode))
+                            {
+                                sp.WriteLine(op.GetCourseNameByPW(password) + " --> Ended!");
+                                runningCourse = "";
+                            }
+                            else
+                            {
+                                sp.WriteLine("Sorry! Another Course is Running Now!");
+                            }
+                        }
+                        /*string courseCode = op.GetCourseCodeByPW(password);
+
+                        if (!op.IsRunningCourse(courseCode))
+                        {
+                                sp.WriteLine(op.GetCourseNameByPW(password) + " --> Started!");
+                                int flag = op.insertDynamicCourse(courseCode);  
+                        }
+                        else
+                        {
+                            sp.WriteLine(op.GetCourseNameByPW(password) + " --> Ended!");
+                            int flag = op.DeleteAllDynamicCourses();         
+                        }*/
+                        
                         
                     }
                     else
                     {
                         //this password is not valid
-                        sp.WriteLine("invalid password!");
+                        sp.WriteLine("Invalid Password!");
 
                     } 
                         password = "";             
@@ -129,10 +161,15 @@ namespace Digital_Attendance
             else
             {
                 //TagID digit
+                this.Invoke((MethodInvoker)delegate
+                {
+                    textBoxEntry.AppendText("Data Received.\n");
+                    textBoxEntry.AppendText(indata + "\n");
+                });
 
             }
-           // indata = indata.Substring(0, indata.Length - 1);
-            
+            // indata = indata.Substring(0, indata.Length - 1);
+
             //check if password
             //if (indata.Contains('#'))
             //{
@@ -150,13 +187,13 @@ namespace Digital_Attendance
             //        sp.WriteLine("Invalid Password!");
 
             //    }
-                     
+
             //}
 
             //else
             //{
             //    MessageBox.Show("Not a Password");
-                
+
             //}
 
 
@@ -193,7 +230,8 @@ namespace Digital_Attendance
                 case DialogResult.No:
                     e.Cancel = true;
                     break;
-                default:
+                default:         
+                    int flag = op.DeleteAllDynamicCourses();
                     Application.ExitThread();
                     break;
             }

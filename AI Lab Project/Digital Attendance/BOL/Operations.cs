@@ -60,12 +60,25 @@ namespace BOL
             return db.ExeReader(cmd);
         }
 
+        public SqlDataReader GetStudentID()
+        {
+            SqlConnection conn = db.connection;
+            string Sql = "SELECT student_id FROM StudentInfo";     
+            if (conn.State != ConnectionState.Open)
+               conn.Open();
+            SqlCommand cmd = new SqlCommand(Sql, conn);
+            return cmd.ExecuteReader();
+            
+        }
+
         public SqlDataReader GetCourses()
         {
             string Sql = "SELECT course_code FROM Courses";
             SqlConnection conn = db.connection;
-            conn.Open();
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
             SqlCommand cmd = new SqlCommand(Sql, conn);
+
             return cmd.ExecuteReader();
         }
 
@@ -73,7 +86,8 @@ namespace BOL
         {
             string Sql = "SELECT COUNT(*) FROM Courses WHERE password = '"+pass+"'";
             SqlConnection conn = db.connection;
-            conn.Open();
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
             SqlCommand cmd = new SqlCommand(Sql, conn);
             if (cmd.ExecuteScalar() != null)
             {
@@ -92,11 +106,120 @@ namespace BOL
         {
             string Sql = "SELECT course_name FROM Courses WHERE password = '" + pass + "'";
             SqlConnection conn = db.connection;
-            conn.Open();
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
             SqlCommand cmd = new SqlCommand(Sql, conn);
             string value = (string)cmd.ExecuteScalar();
             conn.Close();
             return value;
+        }
+
+        public String GetCourseCodeByPW(string pass)
+        {
+            string Sql = "SELECT course_code FROM Courses WHERE password = '" + pass + "'";
+            SqlConnection conn = db.connection;
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
+            SqlCommand cmd = new SqlCommand(Sql, conn);
+            string value = (string)cmd.ExecuteScalar();
+            conn.Close();
+            return value;
+        }
+
+        public bool IsRunningCourse(String courseCode)
+        {
+            string Sql = "SELECT COUNT(*) FROM DynamicCourseID WHERE dynamic_course_code = '" + courseCode + "'";
+            SqlConnection conn = db.connection;
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
+            SqlCommand cmd = new SqlCommand(Sql, conn);
+            if (cmd.ExecuteScalar() != null)
+            {
+                int Status = (int)cmd.ExecuteScalar();
+                if (Status > 0)
+                {
+                    conn.Close();
+                    return true;
+                }
+            }
+            conn.Close();
+            return false;
+        }
+
+        public int insertDynamicCourse(String courseCode)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "INSERT INTO DynamicCourseID VALUES('" + courseCode + "')";
+            return db.ExeNonQuery(cmd);
+        }
+
+        public int DeleteDynamicCourse(String courseCode)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "DELETE FROM DynamicCourseID WHERE dynamic_course_code = '" + courseCode + "'";
+            return db.ExeNonQuery(cmd);
+        }
+
+        public int DeleteAllDynamicCourses()
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "DELETE FROM DynamicCourseID";
+            return db.ExeNonQuery(cmd);
+        }
+
+        public bool HasCourseAssigned(string stdID, string crsname)
+        {
+            string Sql = "SELECT COUNT(*) FROM AssignedCourseList WHERE student_id = '" + stdID + "' AND course_id = '" + crsname + "'";
+            SqlConnection conn = db.connection;
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
+            SqlCommand cmd = new SqlCommand(Sql, conn);
+            if (cmd.ExecuteScalar() != null)
+            {
+                int Status = (int)cmd.ExecuteScalar();
+                if (Status > 0)
+                {
+                    conn.Close();
+                    return true;
+                }
+            }
+            conn.Close();
+            return false;
+        }
+
+        public int AssaignCourse(string stdID, string crsname)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "INSERT INTO AssignedCourseList VALUES('" + stdID + "','" + crsname + "')";
+            return db.ExeNonQuery(cmd);
+        }
+
+        public DataTable ViewAllAssignedCourses()
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM AssignedCourseList";
+            return db.ExeReader(cmd);
+        }
+
+        public DataTable ViewByIDAssignedCourses(string stdID)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM AssignedCourseList WHERE student_id = '" + stdID + "'";
+            return db.ExeReader(cmd);
+        }
+
+        public int DeleteAssignedCourses(string stdID, string crsCode)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "DELETE FROM AssignedCourseList WHERE student_id = '" + stdID + "' AND course_id = '" + crsCode + "'";
+            return db.ExeNonQuery(cmd);
         }
     }
 }
