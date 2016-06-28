@@ -30,6 +30,7 @@
         {
             this.studentsData = new System.Windows.Forms.DataGridView();
             this.btnPrint = new System.Windows.Forms.Button();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.studentsData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,21 +41,29 @@
             this.studentsData.BackgroundColor = System.Drawing.Color.White;
             this.studentsData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.studentsData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.studentsData.Location = new System.Drawing.Point(18, 16);
+            this.studentsData.Location = new System.Drawing.Point(4, 5);
             this.studentsData.Name = "studentsData";
             this.studentsData.ReadOnly = true;
-            this.studentsData.Size = new System.Drawing.Size(695, 300);
+            this.studentsData.Size = new System.Drawing.Size(716, 314);
             this.studentsData.TabIndex = 0;
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(638, 327);
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPrint.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.Location = new System.Drawing.Point(617, 326);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(75, 23);
+            this.btnPrint.Size = new System.Drawing.Size(96, 28);
             this.btnPrint.TabIndex = 1;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.BeginPrint += new System.Drawing.Printing.PrintEventHandler(this.printDocument1_BeginPrint);
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // Student_List
             // 
@@ -77,5 +86,6 @@
 
         private System.Windows.Forms.DataGridView studentsData;
         private System.Windows.Forms.Button btnPrint;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

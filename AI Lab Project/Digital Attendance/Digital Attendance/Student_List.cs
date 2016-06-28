@@ -21,7 +21,6 @@ namespace Digital_Attendance
         public StudentInformations sf = new StudentInformations();
 
         #region Member Variables
-        const string strConnectionString = "data source=localhost;Integrated Security=SSPI;Initial Catalog=Northwind;";
         StringFormat strFormat; //Used to format the grid rows.
         ArrayList arrColumnLefts = new ArrayList();//Used to save left coordinates of columns
         ArrayList arrColumnWidths = new ArrayList();//Used to save column widths
@@ -31,7 +30,6 @@ namespace Digital_Attendance
         bool bFirstPage = false; //Used to check whether we are printing first page
         bool bNewPage = false;// Used to check whether we are printing a new page
         int iHeaderHeight = 0; //Used for the header height
-        private PrintDocument printDocument1;
         #endregion
 
         public Student_List()
@@ -227,6 +225,5 @@ namespace Digital_Attendance
             }
         }
         #endregion
-
     }
 }

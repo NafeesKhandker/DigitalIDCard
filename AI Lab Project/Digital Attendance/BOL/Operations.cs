@@ -214,6 +214,14 @@ namespace BOL
             return db.ExeReader(cmd);
         }
 
+        public DataTable ViewAttanByCourses(string courseCode)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM Attendance WHERE course_code = '" + courseCode + "'";
+            return db.ExeReader(cmd);
+        }
+
         public int DeleteAssignedCourses(string stdID, string crsCode)
         {
             SqlCommand cmd = new SqlCommand();
@@ -244,12 +252,11 @@ namespace BOL
 
         public int TakeAttendance(string RFID, string crsCode)
         {
-            string date = DateTime.Now.ToString("d/M/yyyy");
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO Attendance (student_id, course_code, attendence_date, is_present) VALUES((SELECT StudentInfo.student_id FROM StudentInfo WHERE StudentInfo.student_RFID = '" + RFID + "'), '" + crsCode + "', '" + date + "', 1)"
-;
-            return db.ExeNonQuery(cmd);
+                string date = DateTime.Now.ToString("d/M/yyyy");
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "INSERT INTO Attendance (student_id, course_code, attendence_date, is_present) VALUES((SELECT StudentInfo.student_id FROM StudentInfo WHERE StudentInfo.student_RFID = '" + RFID + "'), '" + crsCode + "', '" + date + "', 1)";
+                return db.ExeNonQuery(cmd);
         }
 
         public DataTable ViewAttendenceToday()

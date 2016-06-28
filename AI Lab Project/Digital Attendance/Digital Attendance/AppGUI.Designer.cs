@@ -122,7 +122,6 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(758, 92);
             this.panelHeader.TabIndex = 7;
-            this.panelHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHeader_Paint);
             // 
             // labelAppName
             // 
@@ -134,7 +133,6 @@
             this.labelAppName.Size = new System.Drawing.Size(208, 42);
             this.labelAppName.TabIndex = 2;
             this.labelAppName.Text = "KUSmartLog";
-            this.labelAppName.Click += new System.EventHandler(this.labelAppName_Click);
             // 
             // pictureBoxStatus
             // 

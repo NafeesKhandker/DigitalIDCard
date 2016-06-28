@@ -16,7 +16,7 @@ namespace Digital_Attendance
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AppGUI());
+            Application.Run(new Attendance());
         }
     }
 }

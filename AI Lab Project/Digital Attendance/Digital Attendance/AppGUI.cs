@@ -20,9 +20,7 @@ namespace Digital_Attendance
         bool isHashPressed = false;
         string password = "";
         string runningCourse = "";
-        //bool isCourseStarted = false;
         System.Timers.Timer myTimer;
-
 
         public AppGUI()
         {
@@ -30,11 +28,7 @@ namespace Digital_Attendance
             pictureBoxStatus.Image = Properties.Resources.StopStatus;
             labelStatus.Text = "KUSmartLog is not running...";
             textBoxPortName.Focus();
-        }
-
-        private void labelAppName_Click(object sender, EventArgs e)
-        {
-
+            
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -46,7 +40,7 @@ namespace Digital_Attendance
 
         private void buttonStop_Click(object sender, EventArgs e)
         {
-            switch (MessageBox.Show("Are you sure you want to stop counting?", "Digital Attendence System", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+            switch (MessageBox.Show("Are you sure you want to stop counting?", "KUSmartLog", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
             {
                 case DialogResult.No:
                     break;
@@ -54,7 +48,7 @@ namespace Digital_Attendance
                     serialCom.Close();
                     labelStatus.Text = "KUSmartLog is not running...";
                     pictureBoxStatus.Image = Properties.Resources.StopStatus;
-                    MessageBox.Show("KUSmartLog Stopped counting attendence.");                   
+                    MessageBox.Show("KUSmartLog has stopped counting attendence.", "KUSmartLog Stopped", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
             }
         }
@@ -70,7 +64,7 @@ namespace Digital_Attendance
                     Application.ExitThread();
                     break;
             }
-            
+
             //Application.Exit();
         }
 
@@ -85,10 +79,9 @@ namespace Digital_Attendance
             {
                 serialCom.PortName = textBoxPortName.Text;
                 serialCom.Open();
-                serialCom.WriteLine("");
                 labelStatus.Text = "KUSmartLog is running...";
                 pictureBoxStatus.Image = Properties.Resources.image_997222;
-                MessageBox.Show("KUSmartLog attendance counting started!");
+                MessageBox.Show("KUSmartLog attendance counting started!", "KUSmartLog Started", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 serialCom.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
 
             }
@@ -104,11 +97,10 @@ namespace Digital_Attendance
         {
             SerialPort sp = (SerialPort)sender;
             string indata = sp.ReadLine();
-    
+
             if (indata.Length == 2)
             {
                 //Single digit pressed
-
                 if (indata.Contains('#'))
                 {
                     if (op.IsValidPassword(password))
@@ -130,44 +122,16 @@ namespace Digital_Attendance
                             }
                             else
                             {
-                                sp.WriteLine("Sorry! Another course is running now! Can not start this course!");
+                                sp.WriteLine("Sorry! Another  course is running now.#");
                             }
                         }
-
-                        /*string courseCode = op.GetCourseCodeByPW(password);
-
-                        if (!op.IsRunningCourse(courseCode))
-                        {
-                            if (!isCourseStarted)
-                            {
-                                sp.WriteLine(op.GetCourseNameByPW(password) + " --> Started!");
-                                int flag = op.insertDynamicCourse(courseCode);
-                                isCourseStarted = true;
-                            }
-                            else
-                            {
-                                sp.WriteLine("Another course is running now! Can not start this course!");
-                            }  
-                        }
-                        else
-                        {
-                            if (isCourseStarted)
-                            {
-                                sp.WriteLine(op.GetCourseNameByPW(password) + " --> Ended!");
-                                int flag = op.DeleteAllDynamicCourses();
-                                isCourseStarted = false;
-                            }         
-                        }*/
-                        
-                        
                     }
                     else
                     {
                         //this password is not valid
-                        sp.WriteLine("Invalid Password!");
-
-                    } 
-                        password = "";             
+                        sp.WriteLine("Invalid password!#");
+                    }
+                    password = "";
                 }
                 else
                     password += indata.Substring(0, indata.Length - 1);
@@ -176,7 +140,6 @@ namespace Digital_Attendance
             else
             {
                 //TagID digit
-                //MessageBox.Show(DateTime.Now.ToString("d/M/yyyy"));
                 indata = indata.Substring(0, indata.Length - 1);
 
                 if (!runningCourse.Equals(""))
@@ -186,89 +149,38 @@ namespace Digital_Attendance
                         int flag = op.TakeAttendance(indata, runningCourse);
                         if (flag > 0)
                         {
-                            sp.WriteLine("Attandance Counted!");
+                            sp.WriteLine("Attandance counted!");
 
                             this.Invoke((MethodInvoker)delegate
-                            { 
-                            DataTable dtable = op.ViewAttendenceToday();
-                            dataGVLog.Rows.Clear();
-                            foreach (DataRow item in dtable.Rows)
                             {
-                                int n = dataGVLog.Rows.Add();
-                                dataGVLog.Rows[n].Cells[0].Value = item["student_id"].ToString();
-                                dataGVLog.Rows[n].Cells[1].Value = item["course_code"].ToString();
-                                dataGVLog.Rows[n].Cells[2].Value = item["attendence_date"].ToString();
-                                dataGVLog.Rows[n].Cells[3].Value = item["is_present"].ToString();
-                            }
-                        });
-                    }
+                                DataTable dtable = op.ViewAttendenceToday();
+                                dataGVLog.Rows.Clear();
+                                foreach (DataRow item in dtable.Rows)
+                                {
+                                    int n = dataGVLog.Rows.Add();
+                                    dataGVLog.Rows[n].Cells[0].Value = item["student_id"].ToString();
+                                    dataGVLog.Rows[n].Cells[1].Value = item["course_code"].ToString();
+                                    dataGVLog.Rows[n].Cells[2].Value = item["attendence_date"].ToString();
+                                    dataGVLog.Rows[n].Cells[3].Value = item["is_present"].ToString();
+                                }
+                            });
+                        }
                         else
-                            sp.WriteLine("Attendance Is Not Counted!");
+                            sp.WriteLine("Duplicate entry!Attendance already counted!#");
                     }
 
                     else
                     {
-                        sp.WriteLine("Sorry! You Are Not Assigned To This Course!");
+                        sp.WriteLine("Sorry! You are  not assigned to this course!#");
                     }
                 }
 
                 else
                 {
-                    sp.WriteLine("Sorry! No Course Is Running Now!");
+                    sp.WriteLine("Sorry! No courseis running now!#");
                 }
-                
 
             }
-            // indata = indata.Substring(0, indata.Length - 1);
-
-            //check if password
-            //if (indata.Contains('#'))
-            //{
-            //    String password = indata.Substring(0, indata.Length - 1);
-
-            //    if (op.IsValidPassword(password))
-            //    {
-            //        //This password is valid
-            //        MessageBox.Show("Found");
-            //    }
-
-            //    else
-            //    {
-            //        //This password is not valid
-            //        sp.WriteLine("Invalid Password!");
-
-            //    }
-
-            //}
-
-            //else
-            //{
-            //    MessageBox.Show("Not a Password");
-
-            //}
-
-
-            //this.Invoke((MethodInvoker)delegate
-            //{
-            //    textBoxEntry.AppendText("Data Received.\n");
-            //    textBoxEntry.AppendText(indata + "\n");
-            //});
-
-
-            //if (String.Equals(indata, "160975869190"))
-            //{
-            //    this.Invoke(new MethodInvoker(delegate ()
-            //    {
-            //        textBoxEntry.AppendText("Matched! \n");
-            //    }));
-            //    sp.WriteLine("Matched");
-
-
-            //}
-            //else
-            //{
-            //    sp.WriteLine("");
-            //}
 
         }
 
@@ -277,27 +189,16 @@ namespace Digital_Attendance
         {
             base.OnFormClosing(e);
             if (e.CloseReason == CloseReason.WindowsShutDown) return;
-            switch (MessageBox.Show("Are you sure you want to exit?", "Digital Attendence System", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+            switch (MessageBox.Show("Are you sure you want to exit?", "KUSmartLog", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
             {
                 case DialogResult.No:
                     e.Cancel = true;
                     break;
-                default:         
+                default:
                     int flag = op.DeleteAllDynamicCourses();
                     Application.ExitThread();
                     break;
             }
-        }
-
-        public void InitTimer()
-        {
-            myTimer = new System.Timers.Timer();
-            // Tell the timer what to do when it elapses
-            myTimer.Elapsed += new ElapsedEventHandler(myEvent);
-            // Set it to go off every five seconds
-            myTimer.Interval = 10000;
-            // And start it        
-            myTimer.Enabled = true;
         }
 
         private void myEvent(object source, ElapsedEventArgs e)
@@ -306,15 +207,9 @@ namespace Digital_Attendance
             {
                 System.Timers.Timer mTimer = (System.Timers.Timer)source;
                 mTimer.Close();
-                MessageBox.Show("Timedout");
                 password = "";
-                serialCom.WriteLine("Session Timedout!");
+                serialCom.WriteLine("Session Timedout!#");
             }
-        }
-
-        private void panelHeader_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
