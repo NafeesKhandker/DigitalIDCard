@@ -20,6 +20,7 @@ namespace Digital_Attendance
         bool isHashPressed = false;
         string password = "";
         string runningCourse = "";
+        //bool isCourseStarted = false;
         System.Timers.Timer myTimer;
 
 
@@ -114,6 +115,7 @@ namespace Digital_Attendance
                     {
                         //This password is valid
                         string courseCode = op.GetCourseCodeByPW(password);
+
                         if (runningCourse.Equals(""))
                         {
                             sp.WriteLine(op.GetCourseNameByPW(password) + " --> Started!");
@@ -128,20 +130,33 @@ namespace Digital_Attendance
                             }
                             else
                             {
-                                sp.WriteLine("Sorry! Another Course is Running Now!");
+                                sp.WriteLine("Sorry! Another course is running now! Can not start this course!");
                             }
                         }
+
                         /*string courseCode = op.GetCourseCodeByPW(password);
 
                         if (!op.IsRunningCourse(courseCode))
                         {
+                            if (!isCourseStarted)
+                            {
                                 sp.WriteLine(op.GetCourseNameByPW(password) + " --> Started!");
-                                int flag = op.insertDynamicCourse(courseCode);  
+                                int flag = op.insertDynamicCourse(courseCode);
+                                isCourseStarted = true;
+                            }
+                            else
+                            {
+                                sp.WriteLine("Another course is running now! Can not start this course!");
+                            }  
                         }
                         else
                         {
-                            sp.WriteLine(op.GetCourseNameByPW(password) + " --> Ended!");
-                            int flag = op.DeleteAllDynamicCourses();         
+                            if (isCourseStarted)
+                            {
+                                sp.WriteLine(op.GetCourseNameByPW(password) + " --> Ended!");
+                                int flag = op.DeleteAllDynamicCourses();
+                                isCourseStarted = false;
+                            }         
                         }*/
                         
                         
@@ -161,11 +176,47 @@ namespace Digital_Attendance
             else
             {
                 //TagID digit
-                this.Invoke((MethodInvoker)delegate
+                //MessageBox.Show(DateTime.Now.ToString("d/M/yyyy"));
+                indata = indata.Substring(0, indata.Length - 1);
+
+                if (!runningCourse.Equals(""))
                 {
-                    textBoxEntry.AppendText("Data Received.\n");
-                    textBoxEntry.AppendText(indata + "\n");
-                });
+                    if (op.IsAssignedToThisCourse(indata, runningCourse))
+                    {
+                        int flag = op.TakeAttendance(indata, runningCourse);
+                        if (flag > 0)
+                        {
+                            sp.WriteLine("Attandance Counted!");
+
+                            this.Invoke((MethodInvoker)delegate
+                            { 
+                            DataTable dtable = op.ViewAttendenceToday();
+                            dataGVLog.Rows.Clear();
+                            foreach (DataRow item in dtable.Rows)
+                            {
+                                int n = dataGVLog.Rows.Add();
+                                dataGVLog.Rows[n].Cells[0].Value = item["student_id"].ToString();
+                                dataGVLog.Rows[n].Cells[1].Value = item["course_code"].ToString();
+                                dataGVLog.Rows[n].Cells[2].Value = item["attendence_date"].ToString();
+                                dataGVLog.Rows[n].Cells[3].Value = item["is_present"].ToString();
+                            }
+                        });
+                    }
+                        else
+                            sp.WriteLine("Attendance Is Not Counted!");
+                    }
+
+                    else
+                    {
+                        sp.WriteLine("Sorry! You Are Not Assigned To This Course!");
+                    }
+                }
+
+                else
+                {
+                    sp.WriteLine("Sorry! No Course Is Running Now!");
+                }
+                
 
             }
             // indata = indata.Substring(0, indata.Length - 1);
@@ -220,6 +271,7 @@ namespace Digital_Attendance
             //}
 
         }
+
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {

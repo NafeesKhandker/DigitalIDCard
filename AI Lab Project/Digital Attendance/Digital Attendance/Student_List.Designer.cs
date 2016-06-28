@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.studentsData = new System.Windows.Forms.DataGridView();
+            this.btnPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.studentsData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,11 +40,21 @@
             this.studentsData.BackgroundColor = System.Drawing.Color.White;
             this.studentsData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.studentsData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.studentsData.Location = new System.Drawing.Point(33, 33);
+            this.studentsData.Location = new System.Drawing.Point(18, 16);
             this.studentsData.Name = "studentsData";
             this.studentsData.ReadOnly = true;
-            this.studentsData.Size = new System.Drawing.Size(660, 300);
+            this.studentsData.Size = new System.Drawing.Size(695, 300);
             this.studentsData.TabIndex = 0;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(638, 327);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(75, 23);
+            this.btnPrint.TabIndex = 1;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // Student_List
             // 
@@ -51,6 +62,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(725, 362);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.studentsData);
             this.Name = "Student_List";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -64,5 +76,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView studentsData;
+        private System.Windows.Forms.Button btnPrint;
     }
 }

@@ -35,13 +35,18 @@
             this.labelStartStop = new System.Windows.Forms.Label();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.labelAppName = new System.Windows.Forms.Label();
-            this.textBoxEntry = new System.Windows.Forms.TextBox();
             this.pictureBoxStatus = new System.Windows.Forms.PictureBox();
             this.buttonStart = new System.Windows.Forms.Button();
             this.buttonStop = new System.Windows.Forms.Button();
             this.labelStatus = new System.Windows.Forms.Label();
+            this.dataGVLog = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVLog)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonLogin
@@ -131,15 +136,6 @@
             this.labelAppName.Text = "KUSmartLog";
             this.labelAppName.Click += new System.EventHandler(this.labelAppName_Click);
             // 
-            // textBoxEntry
-            // 
-            this.textBoxEntry.Location = new System.Drawing.Point(12, 130);
-            this.textBoxEntry.Multiline = true;
-            this.textBoxEntry.Name = "textBoxEntry";
-            this.textBoxEntry.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxEntry.Size = new System.Drawing.Size(605, 305);
-            this.textBoxEntry.TabIndex = 9;
-            // 
             // pictureBoxStatus
             // 
             this.pictureBoxStatus.Image = global::Digital_Attendance.Properties.Resources.StopStatus;
@@ -187,15 +183,58 @@
             this.labelStatus.TabIndex = 11;
             this.labelStatus.Text = "KUSmartLog is not running...";
             // 
+            // dataGVLog
+            // 
+            this.dataGVLog.AllowUserToAddRows = false;
+            this.dataGVLog.AllowUserToDeleteRows = false;
+            this.dataGVLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGVLog.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.dataGVLog.Location = new System.Drawing.Point(12, 130);
+            this.dataGVLog.Name = "dataGVLog";
+            this.dataGVLog.ReadOnly = true;
+            this.dataGVLog.Size = new System.Drawing.Size(605, 305);
+            this.dataGVLog.TabIndex = 12;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.HeaderText = "Student ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "Course Code";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.HeaderText = "Attendnece Date";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Present";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
             // AppGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(757, 500);
+            this.Controls.Add(this.dataGVLog);
             this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.pictureBoxStatus);
-            this.Controls.Add(this.textBoxEntry);
             this.Controls.Add(this.textBoxPortName);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.labelStartStop);
@@ -208,6 +247,7 @@
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVLog)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,8 +264,12 @@
         private System.Windows.Forms.Label labelStartStop;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label labelAppName;
-        private System.Windows.Forms.TextBox textBoxEntry;
         private System.Windows.Forms.PictureBox pictureBoxStatus;
         private System.Windows.Forms.Label labelStatus;
+        private System.Windows.Forms.DataGridView dataGVLog;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

@@ -82,7 +82,7 @@ namespace BOL
             return cmd.ExecuteReader();
         }
 
-        public bool IsValidPassword(String pass)
+        public bool IsValidPassword(string pass)
         {
             string Sql = "SELECT COUNT(*) FROM Courses WHERE password = '"+pass+"'";
             SqlConnection conn = db.connection;
@@ -126,7 +126,7 @@ namespace BOL
             return value;
         }
 
-        public bool IsRunningCourse(String courseCode)
+        public bool IsRunningCourse(string courseCode)
         {
             string Sql = "SELECT COUNT(*) FROM DynamicCourseID WHERE dynamic_course_code = '" + courseCode + "'";
             SqlConnection conn = db.connection;
@@ -146,7 +146,7 @@ namespace BOL
             return false;
         }
 
-        public int insertDynamicCourse(String courseCode)
+        public int insertDynamicCourse(string courseCode)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
@@ -154,7 +154,7 @@ namespace BOL
             return db.ExeNonQuery(cmd);
         }
 
-        public int DeleteDynamicCourse(String courseCode)
+        public int DeleteDynamicCourse(string courseCode)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
@@ -220,6 +220,45 @@ namespace BOL
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "DELETE FROM AssignedCourseList WHERE student_id = '" + stdID + "' AND course_id = '" + crsCode + "'";
             return db.ExeNonQuery(cmd);
+        }
+
+        public bool IsAssignedToThisCourse(string RFID, string crsCode)
+        {
+            string Sql = "SELECT COUNT (*) course_id FROM AssignedCourseList INNER JOIN StudentInfo ON AssignedCourseList.student_id = StudentInfo.student_id AND StudentInfo.student_RFID = '" + RFID + "' AND AssignedCourseList.course_id = '" + crsCode + "'";
+            SqlConnection conn = db.connection;
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
+            SqlCommand cmd = new SqlCommand(Sql, conn);
+            if (cmd.ExecuteScalar() != null)
+            {
+                int Status = (int)cmd.ExecuteScalar();
+                if (Status > 0)
+                {
+                    conn.Close();
+                    return true;
+                }
+            }
+            conn.Close();
+            return false;
+        }
+
+        public int TakeAttendance(string RFID, string crsCode)
+        {
+            string date = DateTime.Now.ToString("d/M/yyyy");
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "INSERT INTO Attendance (student_id, course_code, attendence_date, is_present) VALUES((SELECT StudentInfo.student_id FROM StudentInfo WHERE StudentInfo.student_RFID = '" + RFID + "'), '" + crsCode + "', '" + date + "', 1)"
+;
+            return db.ExeNonQuery(cmd);
+        }
+
+        public DataTable ViewAttendenceToday()
+        {
+            string dateToday = DateTime.Now.ToString("d/M/yyyy");
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM Attendance WHERE attendence_date = '" + dateToday + "'";
+            return db.ExeReader(cmd);
         }
     }
 }
