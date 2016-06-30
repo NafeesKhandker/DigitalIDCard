@@ -275,6 +275,8 @@
             this.ClientSize = new System.Drawing.Size(468, 513);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAddStudent);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "Add_Student";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Student";

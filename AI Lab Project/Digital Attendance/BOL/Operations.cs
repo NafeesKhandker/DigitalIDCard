@@ -30,10 +30,17 @@ namespace BOL
 
         public int insertCourse(Courses c)
         {
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO Courses VALUES('" + c.course_name + "','" + c.course_code +"')";
-            return db.ExeNonQuery(cmd);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "INSERT INTO Courses VALUES('" + c.course_name + "','" + c.course_code + "','" + c.password + "')";
+                return db.ExeNonQuery(cmd);
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
         }
 
         public DataTable ViewStudents(StudentInformations sf)
@@ -203,6 +210,14 @@ namespace BOL
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "SELECT * FROM AssignedCourseList";
+            return db.ExeReader(cmd);
+        }
+
+        public DataTable ViewAllStudentInfo()
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM StudentInfo";
             return db.ExeReader(cmd);
         }
 

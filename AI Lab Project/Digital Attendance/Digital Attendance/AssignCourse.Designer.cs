@@ -33,8 +33,8 @@
             this.labelStdID = new System.Windows.Forms.Label();
             this.labelCrsCode = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonShow = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.valmsgStdID = new System.Windows.Forms.Label();
             this.valmsgCourseCode = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -47,7 +47,7 @@
             this.comboBoxCourseName.Location = new System.Drawing.Point(111, 136);
             this.comboBoxCourseName.Name = "comboBoxCourseName";
             this.comboBoxCourseName.Size = new System.Drawing.Size(176, 21);
-            this.comboBoxCourseName.TabIndex = 0;
+            this.comboBoxCourseName.TabIndex = 3;
             this.comboBoxCourseName.SelectedValueChanged += new System.EventHandler(this.comboBoxCourseName_SelectedValueChanged);
             // 
             // comboBoxStdID
@@ -58,7 +58,7 @@
             this.comboBoxStdID.Location = new System.Drawing.Point(109, 81);
             this.comboBoxStdID.Name = "comboBoxStdID";
             this.comboBoxStdID.Size = new System.Drawing.Size(176, 21);
-            this.comboBoxStdID.TabIndex = 1;
+            this.comboBoxStdID.TabIndex = 2;
             this.comboBoxStdID.SelectedValueChanged += new System.EventHandler(this.comboBoxStdID_SelectedValueChanged);
             // 
             // labelStdID
@@ -91,20 +91,6 @@
             this.panel1.Size = new System.Drawing.Size(190, 261);
             this.panel1.TabIndex = 4;
             // 
-            // buttonAdd
-            // 
-            this.buttonAdd.BackColor = System.Drawing.Color.Teal;
-            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonAdd.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdd.ForeColor = System.Drawing.Color.White;
-            this.buttonAdd.Location = new System.Drawing.Point(24, 72);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(138, 36);
-            this.buttonAdd.TabIndex = 5;
-            this.buttonAdd.Text = "Add";
-            this.buttonAdd.UseVisualStyleBackColor = false;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
             // buttonShow
             // 
             this.buttonShow.BackColor = System.Drawing.Color.White;
@@ -114,10 +100,24 @@
             this.buttonShow.Location = new System.Drawing.Point(24, 127);
             this.buttonShow.Name = "buttonShow";
             this.buttonShow.Size = new System.Drawing.Size(138, 36);
-            this.buttonShow.TabIndex = 6;
+            this.buttonShow.TabIndex = 1;
             this.buttonShow.Text = "Show";
             this.buttonShow.UseVisualStyleBackColor = false;
             this.buttonShow.Click += new System.EventHandler(this.buttonShow_Click);
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.BackColor = System.Drawing.Color.Teal;
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAdd.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdd.ForeColor = System.Drawing.Color.White;
+            this.buttonAdd.Location = new System.Drawing.Point(24, 72);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(138, 36);
+            this.buttonAdd.TabIndex = 0;
+            this.buttonAdd.Text = "Add";
+            this.buttonAdd.UseVisualStyleBackColor = false;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // valmsgStdID
             // 
@@ -150,8 +150,10 @@
             this.Controls.Add(this.labelStdID);
             this.Controls.Add(this.comboBoxStdID);
             this.Controls.Add(this.comboBoxCourseName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "AssignCourse";
-            this.Text = "Add Courses";
+            this.Text = "Assign Courses";
             this.Load += new System.EventHandler(this.AssignCourse_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

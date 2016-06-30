@@ -112,6 +112,8 @@
             this.ClientSize = new System.Drawing.Size(736, 383);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dbGridAssignedCrs);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "ShowAssignedCourses";
             this.Text = "Assigned Courses";
             ((System.ComponentModel.ISupportInitialize)(this.dbGridAssignedCrs)).EndInit();

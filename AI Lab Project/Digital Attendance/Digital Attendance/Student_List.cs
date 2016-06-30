@@ -39,9 +39,17 @@ namespace Digital_Attendance
 
         private void Student_List_Load(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = op.ViewStudents(sf);
-            studentsData.DataSource = dt;
+            DataTable dtable = op.ViewAllStudentInfo();
+            foreach (DataRow item in dtable.Rows)
+            {
+                int n = studentsData.Rows.Add();
+                studentsData.Rows[n].Cells[0].Value = item["student_id"].ToString();
+                studentsData.Rows[n].Cells[1].Value = item["student_RFID"].ToString();
+                studentsData.Rows[n].Cells[2].Value = item["first_name"].ToString();
+                studentsData.Rows[n].Cells[3].Value = item["last_name"].ToString();
+                studentsData.Rows[n].Cells[4].Value = item["contact_mobile"].ToString();
+                studentsData.Rows[n].Cells[5].Value = item["email_address"].ToString();
+            }
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -54,7 +62,7 @@ namespace Digital_Attendance
             //Get the document
             if (DialogResult.OK == printDialog.ShowDialog())
             {
-                printDocument1.DocumentName = "Test Page Print";
+                printDocument1.DocumentName = "Student List";
                 printDocument1.Print();
             }
 

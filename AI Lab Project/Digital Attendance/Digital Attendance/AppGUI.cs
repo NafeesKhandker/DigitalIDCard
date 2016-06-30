@@ -17,10 +17,8 @@ namespace Digital_Attendance
     {
         SerialPort serialCom = new SerialPort();
         Operations op = new Operations();
-        bool isHashPressed = false;
         string password = "";
         string runningCourse = "";
-        System.Timers.Timer myTimer;
 
         public AppGUI()
         {
@@ -34,8 +32,9 @@ namespace Digital_Attendance
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             Login login = new Login();
-            login.Show();
             this.Hide();
+            login.ShowDialog();
+        
         }
 
         private void buttonStop_Click(object sender, EventArgs e)
@@ -201,15 +200,5 @@ namespace Digital_Attendance
             }
         }
 
-        private void myEvent(object source, ElapsedEventArgs e)
-        {
-            if (isHashPressed == false)
-            {
-                System.Timers.Timer mTimer = (System.Timers.Timer)source;
-                mTimer.Close();
-                password = "";
-                serialCom.WriteLine("Session Timedout!#");
-            }
-        }
     }
 }

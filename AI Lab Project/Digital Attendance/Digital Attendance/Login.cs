@@ -43,8 +43,10 @@ namespace Digital_Attendance
                 {
                     AdminPage ap = new AdminPage(up.username);
                     ap.loggedUserName = up.username;
-                    ap.Show();
                     this.Hide();
+                    ap.Show();
+                    
+
                 }
                 else
                 {

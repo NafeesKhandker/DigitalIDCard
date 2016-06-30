@@ -34,7 +34,7 @@ namespace Entity
     {
         public int course_id { get; set; }
         public string course_name { get; set; }
-        public int course_code { get; set; }
+        public string course_code { get; set; }
         public string password { get; set; }
     }
 }

@@ -240,6 +240,8 @@
             this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.labelPortName);
             this.ForeColor = System.Drawing.Color.Gray;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "AppGUI";
             this.Text = "AppGUI";
             this.panelHeader.ResumeLayout(false);

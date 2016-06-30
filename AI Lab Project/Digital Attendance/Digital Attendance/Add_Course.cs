@@ -28,6 +28,7 @@ namespace Digital_Attendance
         {
             c.course_name = validateC_NAME(tbCourseName.Text);
             c.course_code = validateC_CODE(tbCourseCode.Text);
+            c.password = validateC_Password(tbPassword.Text);
 
             if (valmsgC_Name.Visible || valmsgC_Code.Visible)
             {
@@ -37,11 +38,11 @@ namespace Digital_Attendance
             {
                 int flag = op.insertCourse(c);
                 if (flag > 0)
-                {
-                    MessageBox.Show("Saved Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                    MessageBox.Show("Saved Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else if(flag == -1)
+                    MessageBox.Show("The course is already enlisted or the password is already assigned for another course!", "Duplicate", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
-                    MessageBox.Show("Faild to Save Information", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Failed to Save Information!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -61,19 +62,32 @@ namespace Digital_Attendance
             }
         }
 
-        private int validateC_CODE(string text)
+        private string validateC_CODE(string text)
         {
-            int code = 0;
             if (text == "")
             {
                 valmsgC_Code.Text = "This Field is Required";
                 valmsgC_Code.Visible = true;
-                return code;
+                return text;
             }
             else
             {
                 valmsgC_Code.Visible = false;
-                return code = Convert.ToInt32(text);
+                return text;
+            }
+        }
+
+        private string validateC_Password(string text)
+        {
+            if(text=="")
+            {
+                valmsgC_Password.Visible = true;
+                return text;
+            }
+            else
+            {
+                valmsgC_Password.Visible = false;
+                return text;
             }
         }
 
@@ -81,6 +95,7 @@ namespace Digital_Attendance
         {
             valmsgC_Name.Visible = false;
             valmsgC_Code.Visible = false;
+            valmsgC_Password.Visible = false;
         }
 
         private void combocourseType_SelectedIndexChanged(object sender, EventArgs e)

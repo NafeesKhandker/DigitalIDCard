@@ -79,17 +79,12 @@ namespace Digital_Attendance
             //Get the document
             if (DialogResult.OK == printDialog.ShowDialog())
             {
-                printDocument1.DocumentName = "Test Page Print";
+                printDocument1.DocumentName = "Attendance Sheet";
                 printDocument1.Print();
             }
         }
 
         #region Begin Print Event Handler
-        /// <summary>
-        /// Handles the begin print event of print document
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void printDocument1_BeginPrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
             try
@@ -121,11 +116,6 @@ namespace Digital_Attendance
         #endregion
 
         #region Print Page Event
-        /// <summary>
-        /// Handles the print page event of print document
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             try
@@ -176,9 +166,9 @@ namespace Digital_Attendance
                         if (bNewPage)
                         {
                             //Draw Header
-                            e.Graphics.DrawString("Student List", new Font(dataGridViewAttn.Font, FontStyle.Bold),
+                            e.Graphics.DrawString("Attendance Sheet", new Font(dataGridViewAttn.Font, FontStyle.Bold),
                                     Brushes.Black, e.MarginBounds.Left, e.MarginBounds.Top -
-                                    e.Graphics.MeasureString("Student List", new Font(dataGridViewAttn.Font,
+                                    e.Graphics.MeasureString("Attendance Sheet", new Font(dataGridViewAttn.Font,
                                     FontStyle.Bold), e.MarginBounds.Width).Height - 13);
 
                             String strDate = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToShortTimeString();
@@ -187,7 +177,7 @@ namespace Digital_Attendance
                                     Brushes.Black, e.MarginBounds.Left + (e.MarginBounds.Width -
                                     e.Graphics.MeasureString(strDate, new Font(dataGridViewAttn.Font,
                                     FontStyle.Bold), e.MarginBounds.Width).Width), e.MarginBounds.Top -
-                                    e.Graphics.MeasureString("Student List", new Font(new Font(dataGridViewAttn.Font,
+                                    e.Graphics.MeasureString("Attendance Sheet", new Font(new Font(dataGridViewAttn.Font,
                                     FontStyle.Bold), FontStyle.Bold), e.MarginBounds.Width).Height - 13);
 
                             //Draw Columns                 

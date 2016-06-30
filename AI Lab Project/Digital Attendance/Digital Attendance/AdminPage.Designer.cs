@@ -147,7 +147,8 @@
             this.Controls.Add(this.btnAssign);
             this.Controls.Add(this.btnShowStudents);
             this.Controls.Add(this.btnAdd);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "AdminPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Digital Attendance System [Home]";

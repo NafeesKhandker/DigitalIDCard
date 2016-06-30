@@ -254,6 +254,8 @@
             this.Controls.Add(this.tbLastName);
             this.Controls.Add(this.tbFirstName);
             this.Controls.Add(this.btnEditProfile);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "AdminProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminProfile";
